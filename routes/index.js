@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 		});
   	});
 });
-
+/* POST comments on home page. */
 router.post('/create',function(req,res){
 	new Comment({
 		username : req.body.username,

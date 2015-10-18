@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div class="addCommentForm">
+    	<form action="/create" method="post">
+    		<div>
+    			<div>
+    				<span class="label">Name :</span>
+    				<input type="text" class="nameTxt" name="username">
+
+    			</div>
+
+    			<div>
+    				<span class="label">Comment :</span>
+    				<textarea name="content" cols="30" rows="10"></textarea>
+    			</div>
+
+    			<div id="addCommentSubmit">
+    				<input type="submit" value="Save">
+    			</div>
+    		</div>
+    	</form>
+    </div>
+    <br>
+    <br>
+
+    <div id="comments">
+    	<%comments.forEach(function(item){%>
+			<div class="comment"><%=item.username%></div>
+			<div class="created_at"><%=item.created%></div>
+			<br>
+			<div class="content"><%=item.content%></div>
+			<hr>
+    	<%});%>
+    </div>
+  </body>
+</html>
